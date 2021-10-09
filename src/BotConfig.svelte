@@ -94,7 +94,7 @@ function exportData(){
 
         <div slot="buttons" class="buttons">
             <button class="cancel-btn" on:click="{() => onSubmitData(false)}">Cancel</button>
-            <button class="apply-btn col-btn" on:click="{() => exportData(bots)}"><FontAwesomeIcon icon={['fas', 'check']} size="md"/> Apply and start!</button>
+            <button class="apply-btn col-btn" on:click="{() => exportData(bots)}"><FontAwesomeIcon icon={['fas', 'check']} size="md"/> Apply!</button>
         </div>
     </WindowSlot>
 {:else}
@@ -181,8 +181,9 @@ function exportData(){
     justify-content: space-between;
     align-items:center;
     h1{
-        font-size: 1.5rem;
-        padding: 0.4rem 0;
+        font-size: 25px;
+        padding: 16px 0;
+        font-weight: bold;
     }
 }
 .content{
@@ -199,6 +200,10 @@ function exportData(){
 
     input[type="text"], input[type="range"], input[type="number"], select {
         width: 250px;
+    }
+
+    input[type="radio"]{
+        margin-right: 0.5em;
     }
 }
 
@@ -233,6 +238,7 @@ button{
 
 label{
     display: block;
+    font-weight: normal;
 }
 
 .botRow{
@@ -275,7 +281,9 @@ input, button, select {
 }
 
 select, input{
+    color: black;
     padding: 0.4em;
     margin: 0 0 0.5em 0;
+    height: auto;
 }
 </style>

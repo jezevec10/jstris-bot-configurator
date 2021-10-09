@@ -1,4 +1,4 @@
-<div class="botConfig">
+<div class="botConfig" id="botConfig">
     <div class="bcHeader">
         <slot name="header"></slot>
     </div>
@@ -14,26 +14,29 @@
 </div>
 <style lang="scss">
 .botConfig{
+    text-align: left;
     width: 600px;
     height: 500px;
     background-color: #1c1c1c;
-    position: relative;
+    position: absolute;
+    inset: 0;
+    margin: 100px auto;
 
     .bcHeader{
         background-color: #0e0e0e;
         color: white;
-        padding: 0 1rem;
+        padding: 0 15px;
     }
 
     .bcContent{
-        padding: 1.5rem 1rem;
+        padding: 20px 15px;
     }
 
     .bcBottomBtns{
-        margin-top: 0.4rem;
+        margin-top: 3px;
         text-align: right;
-        border-top: 1px solid rgb(65, 65, 65);
-        padding-top: 0.8rem;
+        border-top: 1px solid #414141;
+        padding-top: 12px;
     }
 }
 
