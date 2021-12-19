@@ -16,6 +16,7 @@
 .botConfig{
     text-align: left;
     max-width: 600px;
+    width: 100%;
     height: 500px;
     background-color: #1c1c1c;
     position: absolute;
