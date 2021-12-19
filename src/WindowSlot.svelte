@@ -15,7 +15,7 @@
 <style lang="scss">
 .botConfig{
     text-align: left;
-    width: 600px;
+    max-width: 600px;
     height: 500px;
     background-color: #1c1c1c;
     position: absolute;
