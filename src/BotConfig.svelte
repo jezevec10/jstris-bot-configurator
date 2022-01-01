@@ -148,7 +148,7 @@ function exportData(){
                             <label>
                                 <input type=range bind:value={botPPS} min=0.1 max=10 step=0.1>
                                 <br>
-                                <input type=number bind:value={botPPS} min=0.1 max=10>
+                                <input type=number bind:value={botPPS} min=0.1 max=10 step=0.1>
                             </label>
                         </td>
                     </tr>
