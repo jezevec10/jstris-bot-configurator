@@ -1,10 +1,10 @@
 <script>
 import { library } from '@fortawesome/fontawesome-svg-core';
-import { faPlus, faCheck, faTrashAlt, faCopy, faCog } from '@fortawesome/free-solid-svg-icons';
+import { faPlus, faCheck, faTrashAlt, faCopy, faCog, faExclamationTriangle } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from 'fontawesome-svelte';
 import WindowSlot from './WindowSlot.svelte';
 import { flip } from 'svelte/animate';
-library.add(faPlus, faCheck, faTrashAlt, faCopy, faCog);
+library.add(faPlus, faCheck, faTrashAlt, faCopy, faCog, faExclamationTriangle);
 
 let editing = null;
 let selectedBotType;
@@ -119,6 +119,14 @@ function exportData(){
                                 </option>
                             {/each}
                         </select>
+                        {#if selectedBotType.id == "CC"}
+                            <div class="warning">
+                                <FontAwesomeIcon icon={['fas', 'exclamation-triangle']} size="md"/>
+                                <span>Due to a bug in recent version of Chrome/Edge browsers, using ColdClear can cause memory leak and crash browser tab.
+                                    If this happens, please use Firefox or choose a different bot.
+                                </span>
+                            </div>
+                        {/if}
                     </td>
                 </tr>
                 <tr>
@@ -285,5 +293,22 @@ select, input{
     padding: 0.4em;
     margin: 0 0 0.5em 0;
     height: auto;
+}
+
+.warning{
+    background-color: #f5f5dc;
+    border: 1px solid #e6e6b2;
+    border-radius: 5px;
+    padding: 0.5em;
+    margin-top: 0.5em;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    color: #ff5400;
+    font-size: 0.9em;
+    font-weight: bold;
+    :global(svg){
+        margin-right: 0.5em;
+    }
 }
 </style>
